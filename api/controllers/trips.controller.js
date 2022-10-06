@@ -27,12 +27,15 @@ module.exports.detail = (req, res, next) => {
     .catch(next);
 };
 
-
 //update no funciona
 module.exports.update = (req, res, next) => {
   const trip = req.body;
 
-  Trip.findByIdAndUpdate(req.params.id)
+  Trip.findByIdAndUpdate(req.params.id, trip, 
+    {
+    new: true,
+    runValidators: true,
+    })
     .then((trip) => {
       if (trip) {
         res.json(trip);
@@ -45,13 +48,12 @@ module.exports.update = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
   Trip.findByIdAndDelete(req.params.id)
-  .then((trip) => {
-    if (trip) {
-      res.status(204).send();
-    } else {
-      next(createError(404, "trip not found"));
-    }
-
-  })
+    .then((trip) => {
+      if (trip) {
+        res.status(204).send();
+      } else {
+        next(createError(404, "trip not found"));
+      }
+    })
     .catch(next);
 };
