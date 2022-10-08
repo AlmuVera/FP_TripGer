@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const isURL = (value) => {
+  try {
+    new URL(value);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
 const tripSchema = new Schema(
   {
     city: {
@@ -17,10 +26,10 @@ const tripSchema = new Schema(
       type: String,
       required: "Thumbnail is required",
       trim: true,
-      // validate: {
-      //   validator: isURL,
-      //   message: "URL is not valid",
-      // },
+      validate: {
+        validator: isURL,
+        message: "URL is not valid",
+      },
     },
     startDate: {
       type: Date,
