@@ -1,0 +1,21 @@
+/* navbar */
+
+.navbar-bg {
+  background-color: #4a4a4a;
+}
+.logo-nav {
+  width: 150px;
+}
+.navbutton {
+  color: #52beba;
+}
+.custom-toggler {
+  color: #52beba;
+}
+.custom-toggler .navbar-toggler-icon {
+  color: #52beba;
+}
+
+.nav-link.active-link {
+  color: #52beba;
+}

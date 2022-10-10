@@ -1,9 +1,4 @@
-
-/* navbar */
-
-.navbar-bg{
-  background-color: #4a4a4a;
-}
-.logo-nav{
-  width: 150px;
+body{
+  background-color: #252426;
+  color: white;
 }
