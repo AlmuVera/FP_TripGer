@@ -1,5 +1,24 @@
 /* TripItem */
 
-.trip-item {
+h1.h1-card {
+  font-size: 300%;
+  text-shadow: 1px 1px 10px #404241
+}
+p.p-card{
+  text-shadow: 1px 1px 10px #404241
+}
+
+.card{
+  display: flex;
+  justify-items: center;
+  margin-bottom: 10px;
+  max-width: 620px;
+  
+}
+
+.card-img{
+  height: 230px;
+  object-fit: cover;
+  
  
 }

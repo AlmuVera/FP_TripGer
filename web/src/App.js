@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="container py-5">
+      <div className="container my-4">
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/crear-viaje" element={<CreateTripScreen />} />

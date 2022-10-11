@@ -7,6 +7,14 @@ import "./TripForm.css";
 function TripForm() {
   const { register, handleSubmit, setError, formState: { errors, isValid } } = useForm({ mode: 'onTouched' });
 
+const isURL = (value) => {
+  try {
+    new URL(value);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
   const handleCreateTripSubmit = (data) => {
     console.log(data);
     tripService.createTrip(data)
@@ -32,12 +40,20 @@ function TripForm() {
             required: 'La ciudad de destino es requerida', 
             minLength: { value: 4, message: 'caracteres minimos 4' },
             maxLength: { value: 50, message: 'Has sobrepasado el maximo de caracteres = 50' }
-
           })} />
         {errors.city && (<div className="invalid-feedback">{errors.city.message}</div>)}
       </div>
+      <div className="input-group mb-1">
+        <span className="input-group-text"><i className='fa fa-picture-o fa-fw'></i></span>
+        <input type="text" className={`form-control ${errors.coverPhoto ? 'is-invalid' : ''}`} placeholder="Añade una imagen a tu viaje "
+          {...register('coverPhoto', {
+            required: 'La imagen es  requerida',
+            validate: (value) => isURL(value) || 'URL no valida'
+          })} />
+        {errors.coverPhoto && (<div className="invalid-feedback">{errors.coverPhoto.message}</div>)}
+      </div>
 
-      <div className="d-grid mt-2">
+      <div className="d-grid mb-4 ">
         <button className="btn btn-primary btn-outline-primary" type='submit' disabled={!isValid}>Crear viaje</button>
       </div>
 

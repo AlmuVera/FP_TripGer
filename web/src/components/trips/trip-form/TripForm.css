@@ -9,3 +9,10 @@
   border:  #52beba !important;
   
 }
+
+form{
+  
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 620px;
+}
