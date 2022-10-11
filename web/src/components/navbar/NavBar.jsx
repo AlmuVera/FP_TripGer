@@ -47,6 +47,16 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <NavLink
+                to="/crear-viaje"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
+                <i className="fa fa-plus" ></i>  Nuevo viaje
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
                 to="/inspiracion"
                 className={({ isActive }) =>
                   isActive ? "nav-link active-link" : "nav-link"

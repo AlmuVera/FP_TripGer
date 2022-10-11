@@ -14,5 +14,6 @@ export function getTrip(id) {
 }
 
 export function createTrip(trip) {
-  return http.post("/trips", trip);
+  return http.post("/trips", trip)
+  .then(res => res.data);
 }
