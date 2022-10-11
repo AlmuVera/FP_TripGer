@@ -16,7 +16,8 @@ const tripSchema = new Schema(
       type: String,
       required: "City is required",
       trim: true,
-      maxLength: [50, `City must be <= 20 chars`],
+      minLength: [4, `City must be <= 4 chars`],
+      maxLength: [50, `City must be >= 50 chars`],
     },
     description: {
       type: String,
@@ -24,7 +25,7 @@ const tripSchema = new Schema(
     },
     coverPhoto: {
       type: String,
-      required: "Thumbnail is required",
+      required: "coverPhoto is required",
       trim: true,
       validate: {
         validator: isURL,

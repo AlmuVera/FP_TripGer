@@ -27,7 +27,7 @@ module.exports.detail = (req, res, next) => {
     .catch(next);
 };
 
-//update no funciona
+
 module.exports.update = (req, res, next) => {
   const trip = req.body;
 
