@@ -23,6 +23,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(logger("dev"));
 
+const { session, loadUser } = require("./config/session.config");
+app.use(session);
+app.use(loadUser);
+
 // Configure routes
 const routes = require("./config/routes.config");
 app.use("/api/v1", routes);

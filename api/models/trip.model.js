@@ -43,13 +43,11 @@ const tripSchema = new Schema(
     travelers: Number,
     budget: Number,
 
-    owner: String,
-
-    // owner: {
-    //   ref: "User",
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   required: true,
-    // },
+    owner: {
+      ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
   },
   {
     timestamps: true,
