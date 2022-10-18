@@ -6,7 +6,7 @@ import "./TripItem.css";
 function TripItem({ city, coverPhoto, id }) {
   return (
     <Link to={`/${id}`}>
-      <div className="card text-white mx-auto">
+      <div className="card text-white border-0 mx-auto">
         <img className="card-img" src={coverPhoto} alt={city} />
         <div className="card-img-overlay">
           <h1 className="card-title d-flex justify-content-center h1-card">{city} </h1>

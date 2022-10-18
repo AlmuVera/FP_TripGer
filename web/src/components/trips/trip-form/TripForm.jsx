@@ -32,6 +32,7 @@ const isURL = (value) => {
   }
   // en el input de cities quiero un imput select con listado de ciudades (google?)
   return (
+    
     <form onSubmit={handleSubmit(handleCreateTripSubmit)}>
       <div className="input-group mb-1">
         <span className="input-group-text"><i className='fa fa-tag fa-fw'></i></span>
@@ -43,6 +44,7 @@ const isURL = (value) => {
           })} />
         {errors.city && (<div className="invalid-feedback">{errors.city.message}</div>)}
       </div>
+      
       <div className="input-group mb-1">
         <span className="input-group-text"><i className='fa fa-picture-o fa-fw'></i></span>
         <input type="text" className={`form-control ${errors.coverPhoto ? 'is-invalid' : ''}`} placeholder="Añade una imagen a tu viaje "

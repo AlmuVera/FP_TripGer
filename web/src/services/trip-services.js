@@ -17,3 +17,4 @@ export function createTrip(trip) {
   return http.post("/trips", trip)
   .then(res => res.data);
 }
+

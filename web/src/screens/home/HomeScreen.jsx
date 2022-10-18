@@ -1,18 +1,28 @@
 import React from "react";
-import { Section, TripForm, TripsList } from "../../components";
+import { Link } from "react-router-dom";
+import { Section, TripsList } from "../../components";
+import "./HomeScreen.css";
 
 function HomeScreen() {
   return (
     <>
-      <Section title="Empieza tu viaje" icon="plus">
-        <TripForm />
-      </Section>
+      <div className="text-center mb-3">
+        <Link
+          to="/crear-viaje"
+          type="button"
+          className="btn-circle btn-xl"
+        >
+          <h3 className="fw-light h3-style">Empieza tu viaje</h3>
+          <i className="fa-solid fa-circle-plus btn-plus"></i>
+        </Link>
+      </div>
+     
 
       <Section title="Proximos viajes" icon="plane">
         <TripsList />
       </Section>
       <Section title="Busca inspiración" icon="lightbulb">
-        {/* <TripForm /> */}
+        
       </Section>
     </>
   );

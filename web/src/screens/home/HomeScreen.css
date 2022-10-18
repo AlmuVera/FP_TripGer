@@ -1,0 +1,19 @@
+.btn-circle {
+  color:#4a4a4a;
+  text-decoration: none;
+  margin: auto;
+  background-color: ;
+}
+
+.btn-circle:hover{
+  color: #52beba;
+} 
+
+.btn-plus{
+  font-size: 90px
+}
+
+.btn-circle .h3-style{
+  color: #52beba;
+  
+}

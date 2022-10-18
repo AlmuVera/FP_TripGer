@@ -2,9 +2,11 @@
 
 .navbar-bg {
   background-color: #4a4a4a;
+  min-height: 75px;
+  width: 100%;
 }
 .logo-nav {
-  width: 150px;
+  width: 100px;
 }
 .navbutton {
   color: #52beba;
@@ -18,4 +20,11 @@
 
 .nav-link.active-link {
   color: #52beba;
+}
+
+/* .navbar-user{
+  color: #52beba;
+} */
+.nav-i{
+  width: 150px;
 }
