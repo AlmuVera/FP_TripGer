@@ -9,6 +9,7 @@ function AuthContextProvider({ children }) {
   useEffect(() => {
     getProfile()
       .then((user) => setUser(user))
+      .catch((error) => setUser(null))
      
   }, []);
 
@@ -17,9 +18,9 @@ function AuthContextProvider({ children }) {
     setUser,
   };
 
-  // if (user === undefined) {
-  //   return <></>;
-  // }
+  if (user === undefined) {
+    return <></>;
+  }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

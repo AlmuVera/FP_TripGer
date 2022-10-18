@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 
-import { NavBar } from "./components";
+import { NavBar, Footer } from "./components";
 import { Navigate, Route, Routes } from "react-router-dom";
 import {
   HomeScreen,
@@ -43,6 +43,7 @@ function App() {
           <Route path="/info" element={<InfoScreen />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
