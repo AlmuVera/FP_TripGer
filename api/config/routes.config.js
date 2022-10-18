@@ -7,6 +7,7 @@ const tripsMid = require("../middlewares/trips.mid");
 
 
 router.post("/register", auth.register);
+router.get("/profile", secure.isAuthenticated, auth.profile);
 router.post("/authenticate", auth.authenticate);
 router.delete("/logout", auth.logout);
 
