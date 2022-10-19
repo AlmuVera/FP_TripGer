@@ -1,18 +1,80 @@
 /* tripForm */
 
-.btn-primary{
- background-color: #52beba !important;
- color: #e3e4e6 !important;
- 
-}
-.btn-outline-primary{
-  border:  #52beba !important;
-  
+.tab {
+  padding: 50px 50px 25px;
+  background: #2e3137;
+  border-radius: 50px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
 }
 
-form{
-  
-  margin: auto;
-  margin-bottom: 10px;
-  max-width: 620px;
+.tab:before {
+  content: "\f0f2";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border: 2px solid #52beba;
+  background: #585a5f;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
 }
+
+.tab .tab-content {
+  padding: 30px 0 0 0;
+  background: none;
+  position: relative;
+}
+.form-horizontal .form-group {
+  margin: 0 0 15px 0;
+  position: relative;
+}
+.form-horizontal .form-control {
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 7px;
+  box-shadow: none;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: light;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-control:focus {
+  box-shadow: none;
+  outline: 0 none;
+}
+.form-horizontal .form-group label {
+  color: #7f8291;
+  margin-bottom: 5px;
+}
+.form-horizontal .btn {
+  display: inline-block;
+  width: 50%;
+  background: #52beba;
+  padding: 10px 20px;
+  margin: 20px auto 0;
+  border: none;
+  font-size: 14px;
+  font-weight: light;
+  color: #fff;
+  border-radius: 7px;
+  text-transform: uppercase;
+}
+.form-horizontal .btn:focus {
+  background: #52beba;
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+

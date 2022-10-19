@@ -5,12 +5,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import {
   HomeScreen,
   CreateTripScreen,
+  InspirationScreen,
   LoginScreen,
   TripsScreen,
   InfoScreen,
 } from "./screens";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
+
 
 function AuthPermition({ children }) {
   const { user } = useContext(AuthContext);
@@ -40,6 +42,7 @@ function App() {
             }
           />
           <Route path="/mis-viajes" element={<TripsScreen />} />
+          <Route path="/inspiracion" element={<InspirationScreen />} />
           <Route path="/info" element={<InfoScreen />} />
         </Routes>
       </div>

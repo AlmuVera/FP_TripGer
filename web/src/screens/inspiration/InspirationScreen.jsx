@@ -27,7 +27,7 @@ function InspirationScreen() {
           <div className="card  border-0 bg-transparent">
             <div className="card-body p-0">
               <img
-                src="https://skylineentourage.com/wp-content/uploads/2017/03/Major-NY-Trade-Shows-300x300.jpg"
+                src="https://a.storyblok.com/f/58806/600x600/395d7a07cf/nyterrytown_stageimage_600x600.jpg"
                 alt=""
                 className="w-100 card-img-top rounded"
               />

@@ -1,11 +1,16 @@
 import React from "react";
 import { TripForm } from "../../components";
+import "./CreateTripScreen.css";
 
 function CreateTripScreen() {
   return (
     <>
-      <h2 className="m-0 fw-light text-center">Aquí comienza tu viaje</h2>
-      <hr className="mt-1 mb-3 " />
+      {/* <div className="mb-2">
+        <h2 className="section-header m-0 fw-light fs-4 text-center">
+          ¿A dónde vamos?
+          <i className="fa-solid fa-suitcase m-2"></i>
+        </h2>  
+      </div> */}
 
       <TripForm />
     </>
