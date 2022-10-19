@@ -5,7 +5,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="text-center text-white">
-      <div className="container pt-1">
+      <div className="container pt-1 ">
         <section className="mb-2">
           <a
             className="btn btn-link btn-floating btn-lg text-dark"
