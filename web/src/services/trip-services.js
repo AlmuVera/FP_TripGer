@@ -10,7 +10,7 @@ export function getTrips() {
 }
 
 export function getTrip(id) {
-  // TODO
+  return http.get(`/trips/${id}`);
 }
 
 export function createTrip(trip) {

@@ -1,19 +1,66 @@
-.btn-circle {
-  color:#4a4a4a;
-  text-decoration: none;
-  margin: auto;
+/* tab create new trip*/
 
+.tap-plus a {
+  color: #442323; 
 }
 
-.btn-circle:hover{
-  color: #52beba;
-} 
-
-.btn-plus{
-  font-size: 90px
+.tab-plus h3 { 
+  color: #fff;
 }
 
-.btn-circle .h3-style{
-  color: #52beba;
+.tab-plus h3:hover { 
+  color: #585a5f
+}
+
+.tab-plus {
+  padding: 50px 50px 25px;
+  background: #2e3137;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
   
+}
+
+.tab-plus:before {
+  content: "\2b";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border: 2px solid #52beba;
+  background: #585a5f;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  
+}
+
+.tab-plus .tab-content {
+  padding: 30px 0 0 0;
+  background: none;
+  position: relative;
+}
+/* -------------------- */
+/* tab my trips */
+
+.tab-my-trips {
+  padding: 50px 50px 25px;
+  background: #2e3137;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  
+}
+
+.tab-my-trips .tab-content {
+  padding: 30px 0 0 0;
+  background: none;
+  position: relative;
 }

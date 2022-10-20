@@ -4,7 +4,7 @@ function InspirationScreen() {
   return (
     <>
       <div className="row pb-5 mb-4">
-        <div className="col-6">
+        <div className="col-4 col-xs-6">
           {/* <!-- Card--> */}
           <div className="card border-0 bg-transparent">
             <div className="card-body p-0">
@@ -22,7 +22,7 @@ function InspirationScreen() {
           </div>
         </div>
 
-        <div className="col-6">
+        <div className="col-4 col-xs-6">
           {/* <!-- Card--> */}
           <div className="card  border-0 bg-transparent">
             <div className="card-body p-0">
@@ -40,7 +40,7 @@ function InspirationScreen() {
           </div>
         </div>
 
-        <div className="col-6">
+        <div className="col-4 col-xs-6">
           {/* <!-- Card--> */}
           <div className="card border-0 bg-transparent">
             <div className="card-body p-0">
@@ -58,7 +58,7 @@ function InspirationScreen() {
           </div>
         </div>
 
-        <div className="col-6">
+        <div className="col-4 col-xs-6">
           {/* <!-- Card--> */}
           <div className="card  border-0 bg-transparent">
             <div className="card-body p-0">
@@ -71,6 +71,40 @@ function InspirationScreen() {
                 <h5 className="mb-0">Lisboa</h5>
                 <p className="mb-0  small text-muted">Portugal</p>
                 <p className="mb-3  small text-muted">5 días</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-4 col-xs-6">
+          {/* <!-- Card--> */}
+          <div className="card  border-0 bg-transparent">
+            <div className="card-body p-0">
+              <img
+                src="https://res.cloudinary.com/jnto/image/upload/w_600,h_600,c_fill,f_auto,fl_lossy,q_auto/v1/media/filer_public/2c/21/2c21ab18-f213-4bfa-adb8-b37b1620f7da/shutterstock_302738093-1024x683_grbcxu"
+                alt=""
+                className="w-100 card-img-top rounded"
+              />
+              <div className="pt-2">
+                <h5 className="mb-0">Tokyo</h5>
+                <p className="mb-0  small text-muted">Japón</p>
+                <p className="mb-3  small text-muted">5 días</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-4 col-xs-6">
+          {/* <!-- Card--> */}
+          <div className="card  border-0 bg-transparent">
+            <div className="card-body p-0">
+              <img
+                src="https://elsecretodelmercuriorojo.com/wp-content/uploads/2021/08/Lugar-Poder-Milan-Duomo-Mercurio-Rojo-1-600x600.jpg"
+                alt=""
+                className="w-100 card-img-top rounded"
+              />
+              <div className="pt-2">
+                <h5 className="mb-0">Milan</h5>
+                <p className="mb-0  small text-muted">Italia</p>
+                <p className="mb-3  small text-muted">3 días</p>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@
 .tab {
   padding: 50px 50px 25px;
   background: #2e3137;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
   position: relative;
 }
@@ -73,6 +73,13 @@
 .form-horizontal .btn:focus {
   background: #52beba;
   color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.form-horizontal .btn:hover {
+  background: #585a5f;
+  color: #52beba;
   outline: none;
   box-shadow: none;
 }

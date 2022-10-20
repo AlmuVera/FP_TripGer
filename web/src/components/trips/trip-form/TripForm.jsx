@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import * as tripService from "../../../services/trip-services";
 
 import "./TripForm.css";
 
 function TripForm() {
+  const navigation = useNavigate();
   const {
     register,
     handleSubmit,
@@ -24,7 +26,7 @@ function TripForm() {
     console.log(data);
     tripService
       .createTrip(data)
-      .then((trip) => console.log("todo bien", trip))
+      .then((trip) => navigation('/'))
       .catch((error) => {
         if (error.response?.data?.errors) {
           const { errors } = error.response.data;

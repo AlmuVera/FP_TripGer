@@ -1,6 +1,6 @@
 import React from "react";
 import { TripForm } from "../../components";
-import "./CreateTripScreen.css";
+
 
 function CreateTripScreen() {
   return (

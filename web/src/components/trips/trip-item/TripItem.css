@@ -12,13 +12,15 @@ p.p-card{
   display: flex;
   justify-items: center;
   margin-bottom: 10px;
-  max-width: 620px;
+  max-width: 720px;
   
 }
 
 .card-img{
   height: 230px;
   object-fit: cover;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+
   
  
 }
