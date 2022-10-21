@@ -10,7 +10,7 @@ const isURL = (value) => {
   }
 };
 
-const documentsSchema = new Schema(
+const docsSchema = new Schema(
   {
     title: {
       type: String,
@@ -25,6 +25,7 @@ const documentsSchema = new Schema(
         validator: isURL,
         message: "URL is not valid",
     },
+  },
 
     user: {
       ref: "User",
@@ -38,6 +39,7 @@ const documentsSchema = new Schema(
     }
     
   },
+
   {
     timestamps: true,
     toJSON: {
@@ -51,5 +53,5 @@ const documentsSchema = new Schema(
   }
 );
 
-const Trip = mongoose.model("Trip", documentsSchema);
-module.exports = Trip;
+const Doc = mongoose.model("Doc", docsSchema);
+module.exports = Doc;

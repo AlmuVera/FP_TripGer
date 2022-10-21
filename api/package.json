@@ -19,7 +19,9 @@
     "express-session": "^1.17.3",
     "http-errors": "^2.0.0",
     "mongoose": "^6.6.5",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "react-google-maps": "^9.4.5",
+    "react-google-places-autocomplete": "^3.4.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",

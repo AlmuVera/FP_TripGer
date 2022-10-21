@@ -4,7 +4,7 @@ const createError = require("http-errors"); //para utilizar createError
 module.exports.list = (req, res, next) => {
   Trip.find()
     .populate("owner", "name email")
-    .then((trips) => res.json(trips))
+    .then((trips) => res.status(200).json(trips))
     .catch((error) => next(error));
 };
 
@@ -20,9 +20,10 @@ module.exports.create = (req, res, next) => {
 module.exports.detail = (req, res, next) => {
   Trip.findById(req.params.id)
     .populate("owner", "name email")
+    .populate("docs")
     .then((trip) => {
       if (trip) {
-        res.json(trip);
+        res.status(200).json(trip);
       } else {
         next(createError(404, "trip not found"));
       }
@@ -33,13 +34,12 @@ module.exports.detail = (req, res, next) => {
 //con trips.mid evoluciona y se simplifican los controladores así:
 module.exports.update = (req, res, next) => {
   const data = req.body;
-  delete data.views;
   delete data.owner;
 
   const trip = Object.assign(req.trip, data);
   trip
     .save()
-    .then((trip) => res.json(trip))
+    .then((trip) => res.status(200).json(trip))
     .catch(next);
 };
 
