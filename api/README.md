@@ -70,7 +70,7 @@ module.exports.create = (req, res, next) => {
 
 
 // Ejemplo del modelo de trip
-const trip = {
+const tip = {
   ...
   _id: 1234,
   title: 'Nos vamos a Berlin!',

@@ -35,13 +35,15 @@ const tripSchema = new Schema(
     startDate: {
       type: Date,
       default: Date.now,
+      required: "StartDate is required",
     },
     endDate: {
       type: Date,
       default: Date.now,
+      required: "StartDate is required",
     },
-    travelers: Number,
-    budget: Number,
+    // travelers: Number,
+    // budget: Number,
 
     owner: {
       ref: "User",
