@@ -7,15 +7,26 @@ function AuthContextProvider({ children }) {
   const [user, setUser] = useState(undefined); // undefined means loading
 
   useEffect(() => {
-    getProfile()
+    const isLoaded = localStorage.getItem("user-loaded") === "true";
+    if (isLoaded){
+      getProfile()
       .then((user) => setUser(user))
-      .catch((error) => setUser(null))
-     
+      .catch((error) => setUser(null));
+  
+    } else {
+      setUser(null)
+    }
+   
   }, []);
+
+  const authenticateUser = (user) => {
+    localStorage.setItem('user-loaded', 'true')
+    setUser(null)
+  }
 
   const value = {
     user,
-    setUser,
+    setUser: authenticateUser,
   };
 
   if (user === undefined) {
