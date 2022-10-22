@@ -9,13 +9,14 @@ module.exports.list = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
+  
   Doc.create({
     title: req.body.title,
-    file: req.body.file,
+    file: req.file.path,
     trip: req.params.id,
     user: req.user.id,
   })
-    .then((doc) => res.status(201).json(doc))
+    .then((doc) => {res.status(201).json(doc)})
     .catch(next);
 };
 

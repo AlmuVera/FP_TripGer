@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('./multer.config')
 const trips = require('../controllers/trips.controller')
 const docs = require('../controllers/documents.controller')
 const auth = require("../controllers/auth.controller");
@@ -18,7 +19,7 @@ router.patch('/trips/:id', secure.isAuthenticated, tripsMid.isOwnedByUser, trips
 router.delete('/trips/:id', secure.isAuthenticated, tripsMid.isOwnedByUser, trips.delete);
 
 // router.get('/trips/:id/documents', secure.isAuthenticated, docs.list);
-router.post('/trips/:id/documents', secure.isAuthenticated, docs.create);
+router.post('/trips/:id/documents', secure.isAuthenticated, upload.single('file'), docs.create);
 router.get('/trips/:id/documents/:documentId', secure.isAuthenticated, docs.detail);
 router.patch('/trips/:id/documents/:documentId', secure.isAuthenticated,tripsMid.documentOwnedByUser, docs.update);
 router.delete('/trips/:id/documents/:documentId', secure.isAuthenticated,tripsMid.documentOwnedByUser, docs.delete);
