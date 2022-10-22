@@ -2,7 +2,7 @@ import React from "react";
 import * as tripService from "../../../services/trip-services";
 //import { Link } from "react-router-dom";
 
-// import "./TripItem.css";
+import "./DocumentItem.css";
 
 function DocumentItem(props) {
   const handleDeleteFile = (file, tripId) => {
@@ -26,14 +26,23 @@ function DocumentItem(props) {
 
   return (
     <>
-      <div></div>
-      
-      <a href={props.docData.file}>{props.docData.title}</a>
-      <button onClick={(e) => {
-      handleDeleteFile(props.docData.id, props.docData.trip)
-      }}>delete</button>
+      <div className="d-flex justify-content-between bg-list-item mb-2 rounded p-2 ">
+        <a target="blank" className="link-doc" href={props.docData.file}>
+          {props.docData.title}
+          {/* see file btn: */}
+          <i className="fa-regular fa-eye list-see-icon "></i>
+        </a>
 
-    
+        <button
+          className="border-0 bg-transparent "
+          onClick={(e) => {
+            handleDeleteFile(props.docData.id, props.docData.trip);
+          }}
+        >
+          {/* delete btn: */}
+          <i className="fa-solid fa-trash list-trash-icon"></i>
+        </button>
+      </div>
     </>
   );
 }

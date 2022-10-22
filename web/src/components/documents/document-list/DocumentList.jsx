@@ -18,23 +18,21 @@ function DocumentList(props) {
 
   return (
     <div className="container">
-      <div className="list-row">
+      <div className="">
         {docs
         ? docs.map((doc) => (
-          
-          <div key={doc.id} className="col-4">
- 
+
+          <div key={doc.id} className="col-12">
+
             <DocumentItem docData={doc} setMakeUpdate={setMakeUpdate} />
           </div>
-          
+
         ))
       : "Loading..."}
-     
+
       </div>
     </div>
   );
 }
 
 export default DocumentList;
-
-

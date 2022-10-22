@@ -8,7 +8,7 @@ import "./Documents.Screen.css";
 
 function DocumentsScreen() {
   const { id } = useParams();
-  const [updateAfterUpload, setUpdateAfterUpload] = useState(false)
+  const [updateAfterUpload, setUpdateAfterUpload] = useState(false);
 
   const {
     register,
@@ -18,7 +18,7 @@ function DocumentsScreen() {
   } = useForm({ mode: "onTouched" });
 
   const handleUploadFile = (data) => {
-    setUpdateAfterUpload(false)
+    setUpdateAfterUpload(false);
     console.log(data);
     tripService
       .uploadFile(id, data.title, data.file[0])
@@ -71,7 +71,7 @@ function DocumentsScreen() {
                     {/* <label htmlFor="title">Nombre del archivo</label> */}
                     <input
                       type="file"
-                      className={`form-control ${
+                      className={`form-control  ${
                         errors.title ? "is-invalid" : ""
                       }`}
                       {...register("file", {
@@ -100,14 +100,8 @@ function DocumentsScreen() {
             </div>
             <div>
               <h3 className="fw-light m-2">Documentos:</h3>
-              <DocumentList docId={id} updateAfterUpload={updateAfterUpload}/>
-              {/* <ul className="list-group">
-                <li className="list-group-item"><DocumentItem /></li>
-                <li className="list-group-item">Dapibus ac facilisis in</li>
-                <li className="list-group-item">Morbi leo risus</li>
-                <li className="list-group-item">Porta ac consectetur ac</li>
-                <li className="list-group-item">Vestibulum at eros</li>
-              </ul> */}
+              <DocumentList docId={id} updateAfterUpload={updateAfterUpload} />
+              
             </div>
           </div>
         </div>
