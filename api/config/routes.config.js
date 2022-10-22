@@ -18,7 +18,6 @@ router.get('/trips/:id', secure.isAuthenticated, trips.detail);
 router.patch('/trips/:id', secure.isAuthenticated, tripsMid.isOwnedByUser, trips.update);
 router.delete('/trips/:id', secure.isAuthenticated, tripsMid.isOwnedByUser, trips.delete);
 
-// router.get('/trips/:id/documents', secure.isAuthenticated, docs.list);
 router.post('/trips/:id/documents', secure.isAuthenticated, upload.single('file'), docs.create);
 router.get('/trips/:id/documents/:documentId', secure.isAuthenticated, docs.detail);
 router.patch('/trips/:id/documents/:documentId', secure.isAuthenticated,tripsMid.documentOwnedByUser, docs.update);
