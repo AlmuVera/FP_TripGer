@@ -5,5 +5,8 @@ export { default as TripForm } from "./trips/trip-form/TripForm";
 export { default as Footer } from "./footer/Footer";
 export { default as TripItem } from "./trips/trip-item/TripItem"
 export { default as DocumentsBox } from "./boxes/documents-box/DocumentsBox";
+export { default as DocumentList } from "./documents/document-list/DocumentList";
+export { default as DocumentItem } from "./documents/document-item/DocumentItem";
+
 export { default as MapBox } from "./boxes/map-box/MapBox";
 export { default as DiaryBox } from "./boxes/travel-diary/DiaryBox";

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import * as tripService from "../../services/trip-services";
+import { DocumentList } from "../../components";
 
 import "./Documents.Screen.css";
 
 function DocumentsScreen() {
   const { id } = useParams();
+  const [updateAfterUpload, setUpdateAfterUpload] = useState(false)
 
   const {
     register,
@@ -16,10 +18,11 @@ function DocumentsScreen() {
   } = useForm({ mode: "onTouched" });
 
   const handleUploadFile = (data) => {
+    setUpdateAfterUpload(false)
     console.log(data);
     tripService
       .uploadFile(id, data.title, data.file[0])
-
+      .then(() => setUpdateAfterUpload(true))
       .catch((error) => {
         if (error.response?.data?.errors) {
           const { errors } = error.response.data;
@@ -29,7 +32,6 @@ function DocumentsScreen() {
           });
         }
       });
-
   };
 
   return (
@@ -96,11 +98,20 @@ function DocumentsScreen() {
                 </form>
               </div>
             </div>
+            <div>
+              <h3 className="fw-light m-2">Documentos:</h3>
+              <DocumentList docId={id} updateAfterUpload={updateAfterUpload}/>
+              {/* <ul className="list-group">
+                <li className="list-group-item"><DocumentItem /></li>
+                <li className="list-group-item">Dapibus ac facilisis in</li>
+                <li className="list-group-item">Morbi leo risus</li>
+                <li className="list-group-item">Porta ac consectetur ac</li>
+                <li className="list-group-item">Vestibulum at eros</li>
+              </ul> */}
+            </div>
           </div>
         </div>
       </div>
-
-      <div>DocumentsScreen</div>
     </>
   );
 }

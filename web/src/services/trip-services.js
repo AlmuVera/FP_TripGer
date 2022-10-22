@@ -20,9 +20,19 @@ export function createTrip(trip) {
 
 export function uploadFile(id, title, file) {
   const data = new FormData()
-
   data.append('title', title)
   data.append('file', file)
   return http.post(`/trips/${id}/documents`,data)
-  // .then(res => res.data);
+}
+
+export function deleteFile(file, id) {
+  return http.delete(`/trips/${id}/documents/${file}`)
+}
+
+// export function getFile(id, title) {
+//   return http.get(`/trips/${id}/documents`)
+// };
+
+export function getDocuments(id) {
+  return http.get(`/trips/${id}`);
 }
