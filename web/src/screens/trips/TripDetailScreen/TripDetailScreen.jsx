@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router";
+import { DiaryBox, DocumentsBox, MapBox } from "../../../components";
 // import { Section } from "../../../components";
 import { getTrip } from "../../../services/trip-services";
+
+
+import "./TripDetailScreen.css";
 
 function TripDetailScreen() {
   const [trip, setTrip] = useState(null);
@@ -16,27 +21,44 @@ function TripDetailScreen() {
   }
 
   return (
-   <>
-      {console.log(trip.data.city)}
-      <div className="row">
-        <div className="col-12">
-        <h3>{trip.data.city}</h3>
-          <img src={trip.data.coverPhoto} alt="coverPhoto" className="w-100" />
-        </div>
-        <div className="col-8">
-          
-          <p>{trip.data.description}</p>
-          <p>{trip.data.startDate}</p>
-          <p>{trip.data.endDate}</p>
-          {/* <p>
-            <a href={trip.data.url} target="_blank" rel="noreferrer">
-              {trip.data.url}
-            </a>
-          </p>        */}
-        </div>
+    <>
+      {/* {console.log(trip.data.city)} */}
+
+      <div className="col-12">
+        <img
+          src={trip.data.coverPhoto}
+          alt="coverPhoto"
+          className="w-100 rounded"
+        />
+        <h2 className="my-3">{trip.data.city}</h2>
       </div>
-      </>
-   
+      <div className="">
+        <p>{trip.data.description}</p>
+        <p className="m-0">{trip.data.startDate}</p>
+        <p>{trip.data.endDate}</p>
+      </div>
+
+      {/* <div className="d-flex flex-row boxes">
+        <DocumentsBox />
+        <MapBox />
+      </div> */}
+
+      <div className="d-flex flex-row boxes">
+
+        <Link to={`/${id}/documentos`} type="button">
+          <DocumentsBox />
+        </Link>
+
+        <Link to="/mapa" type="button">
+          <MapBox />
+        </Link>
+
+        <Link to="/diario-de-viaje" type="button">
+          <DiaryBox />
+        </Link>
+       
+      </div>
+    </>
   );
 }
 

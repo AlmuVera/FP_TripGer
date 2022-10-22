@@ -18,3 +18,11 @@ export function createTrip(trip) {
   .then(res => res.data);
 }
 
+export function uploadFile(id, title, file) {
+  const data = new FormData()
+
+  data.append('title', title)
+  data.append('file', file)
+  return http.post(`/trips/${id}/documents`,data)
+  // .then(res => res.data);
+}

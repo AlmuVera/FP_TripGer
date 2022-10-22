@@ -1,0 +1,17 @@
+
+.box {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #2e3137;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.doc-folder{
+  font-size: 40px;
+  margin: auto
+}
+
+.text-box{
+  margin: auto;
+}

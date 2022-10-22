@@ -3,6 +3,11 @@ body{
   color: #e3e4e6;
 }
 
-a, a:link, a:visited, a:active, a:hover {
+a, a:link, a:visited, a:active {
   text-decoration: none;
+  color: #fff
+
+}
+a:hover{
+  /* color: #585a5f; */
 }

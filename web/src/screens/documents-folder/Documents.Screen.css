@@ -1,6 +1,6 @@
 /* tripForm */
 
-.tab {
+.tab-document {
   padding: 50px 50px 25px;
   background: #2e3137;
   border-radius: 20px;
@@ -8,8 +8,8 @@
   position: relative;
 }
 
-.tab:before {
-  content: "\f0f2";
+.tab-document:before {
+  content: "\f65e";
   font-family: "Font Awesome 5 Free";
   font-weight: 700;
   width: 100px;
@@ -28,7 +28,7 @@
   right: 0;
 }
 
-.tab .tab-content {
+.tab-document .tab-content {
   padding: 30px 0 0 0;
   background: none;
   position: relative;

@@ -23,10 +23,10 @@ function TripForm() {
     }
   };
   const handleCreateTripSubmit = (data) => {
-    console.log(data);
+    console.log( data);
     tripService
       .createTrip(data)
-      .then((trip) => navigation('/'))
+      .then((trip) => navigation(`/${trip.id}`))
       .catch((error) => {
         if (error.response?.data?.errors) {
           const { errors } = error.response.data;
