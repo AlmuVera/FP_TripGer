@@ -49,11 +49,11 @@ function TripDetailScreen() {
           <DocumentsBox />
         </Link>
 
-        <Link to="/mapa" type="button">
+        <Link to={`/${id}/mapa`} type="button">
           <MapBox />
         </Link>
 
-        <Link to="/diario-de-viaje" type="button">
+        <Link to={`/${id}/diario-de-viaje`} type="button">
           <DiaryBox />
         </Link>
        

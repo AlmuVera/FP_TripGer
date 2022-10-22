@@ -49,8 +49,8 @@ function App() {
           <Route path="/mis-viajes" element={<TripsScreen />} />
           <Route path="/:id" element={<TripDetailScreen />}/>
           <Route path="/:id/documentos" element={<DocumentsScreen/>}/>
-          <Route path="/mapa" element={<MapaScreen/>}/>
-          <Route path="/diario-de-viaje" element={<DiaryScreen/>}/>
+          <Route path="/:id/mapa" element={<MapaScreen/>}/>
+          <Route path="/:id/diario-de-viaje" element={<DiaryScreen/>}/>
           <Route path="/inspiracion" element={<InspirationScreen />} />
           <Route path="/info" element={<InfoScreen />} />
         </Routes>
