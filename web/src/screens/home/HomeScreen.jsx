@@ -24,7 +24,10 @@ function HomeScreen() {
       </div>
 
       <Section title="Proximos viajes" icon="plane">
-        <TripsList />
+        <TripsList tripFilter={"en "} />
+      </Section>
+      <Section title="Tus últimos viajes" icon="person-falling">
+        <TripsList tripFilter={"hace "} />
       </Section>
 
       <Section

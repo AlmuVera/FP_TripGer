@@ -19,8 +19,8 @@ p.p-card{
 .card-img{
   height: 230px;
   object-fit: cover;
- 
+}
 
-  
- 
+.date-arrow{
+  margin: 2px 6px;
 }

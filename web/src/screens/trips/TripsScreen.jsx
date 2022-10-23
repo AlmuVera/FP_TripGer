@@ -5,7 +5,7 @@ function TripsScreen() {
   return (
     <>
     <Section title="Mis viajes" icon="plane">
-      <TripsList />
+      <TripsList tripFilter={"en "} />
     </Section>
   </>
   )

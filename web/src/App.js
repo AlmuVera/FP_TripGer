@@ -18,7 +18,13 @@ import {
 } from "./screens";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
-
+import moment from 'moment';
+import 'moment/locale/es'
+moment.locale('es')
+moment.updateLocale('es',{
+  monthsShort:'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_')
+  });
+  
 
 function AuthPermition({ children }) {
   const { user } = useContext(AuthContext);
