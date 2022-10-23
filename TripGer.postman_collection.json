@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "28caf0a5-e26e-4cf3-9732-f0b4f8e4debe",
+		"name": "TripGer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "trips",
+			"item": [
+				{
+					"name": "Trips list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/trips/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trips create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"city\": \"Concepcion\",\n    \"coverPhoto\": \"https://loremflickr.com/640/480/city?96939\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Madrid",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trip detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trip update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"Madrid edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/6345aabbd87fc2e8cdcb690c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"6345aabbd87fc2e8cdcb690c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trip delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"Madrid edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/6355004e66940fb882eb2073",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"6355004e66940fb882eb2073"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document create of Trip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "billete avion",
+									"type": "default"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/AlmuVera/Documents/DOCUMENTOS ALMU/ALMU&NICOLE/Documentos para residencia/DOCUMENTACION PARA PERMISO DE RESIDENCIA copia/Otros documentos/BILLETES/2020_12_16-BILLETE_IBERIA_AMSTERDAM-MADRID_VIGARA VERA_ALMUDENA.PDF"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/635399e79ed8f520fadbda63/documents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"635399e79ed8f520fadbda63",
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document update of Trip",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"he cambiado este comentario de visita al museo del prado\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8/documents/6355360ab91819394e4924b0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8",
+								"documents",
+								"6355360ab91819394e4924b0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document detail of Trip",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"he cambiado este comentario\"\n    \n   \n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8/documents/63529f7146aedcbe7f1b8fb8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8",
+								"documents",
+								"63529f7146aedcbe7f1b8fb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DiaryPost create of Trip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "este es un titulo awesome",
+									"type": "default"
+								},
+								{
+									"key": "text",
+									"value": "jasdlk laskdj alkdj asdkj a;ldk as;ldk a;slkd ;alsdk a;sldk;laskd",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/AlmuVera/Desktop/IMG_5406.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/6355360ab91819394e4924b0/diarypost",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"6355360ab91819394e4924b0",
+								"diarypost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DiaryPost detail of Trip",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "este es un titulo awesome",
+									"type": "default"
+								},
+								{
+									"key": "text",
+									"value": "jasdlk laskdj alkdj asdkj a;ldk as;ldk a;slkd ;alsdk a;sldk;laskd",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/AlmuVera/Desktop/IMG_5406.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/6355360ab91819394e4924b0/diarypost/635540b36f01b19fb2f09157",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"6355360ab91819394e4924b0",
+								"diarypost",
+								"635540b36f01b19fb2f09157"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DiaryPost update of Trip",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"he cambiado el titulo de este  post\"\n    \n   \n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8/diarypost/6355360ab91819394e4924b0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8",
+								"diarypost",
+								"6355360ab91819394e4924b0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DiaryPost delete of Trip",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"he cambiado este comentario\"\n    \n   \n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8/documents/63529f7146aedcbe7f1b8fb8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8",
+								"documents",
+								"63529f7146aedcbe7f1b8fb8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Almu\",\n    \"email\": \"almu@mail.com\",\n    \"password\": \"12345678\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate (login)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"almu@mail.com\",\n    \"password\": \"12345678\"\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/authenticate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Document of Trip Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"he cambiado este comentario\"\n    \n   \n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/trips/634f00f3bbd4c8c8b3e067d8/documents/63529f7146aedcbe7f1b8fb8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"trips",
+								"634f00f3bbd4c8c8b3e067d8",
+								"documents",
+								"63529f7146aedcbe7f1b8fb8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3001",
+			"type": "default"
+		}
+	]
+}
