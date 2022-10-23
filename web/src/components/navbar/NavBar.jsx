@@ -2,17 +2,30 @@ import React, { useContext } from "react";
 import logo from "../../logo_tripger.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { logout } from "../../services/auth-services";
+
 import "./NavBar.css";
 
 function NavBar() {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
+
+  const handleClick = () => {
+    logout()
+      .then(() => {
+        localStorage.clear();
+        setUser(null);
+      })
+      .catch((error) => console.error(error));
+  };
 
   if (!user) {
-    
     return (
       <nav className="navbar navbar-bg sticky-top">
         <div className="container-fluid position-relative">
-          <Link className="navbar-brand position-absolute top-50 start-50 translate-middle" to="/">
+          <Link
+            className="navbar-brand position-absolute top-50 start-50 translate-middle"
+            to="/"
+          >
             <img className="logo-nav " src={logo} alt="TrpGer Logo" />
           </Link>
           <ul className="navbar-nav">
@@ -34,7 +47,10 @@ function NavBar() {
     return (
       <nav className="navbar navbar-bg sticky-top">
         <div className="container-fluid">
-          <Link className="navbar-brand position-absolute top-50 start-50 translate-middle" to="/">
+          <Link
+            className="navbar-brand position-absolute top-50 start-50 translate-middle"
+            to="/"
+          >
             <img className="logo-nav " src={logo} alt="TrpGer Logo" />
           </Link>
           <button
@@ -48,14 +64,12 @@ function NavBar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-  
+
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">  
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
                   to="/"
-                 
                   data-target=".navbar-collapse.show"
                   className={({ isActive }) =>
                     isActive ? "nav-link active-link" : "nav-link"
@@ -71,7 +85,7 @@ function NavBar() {
                     isActive ? "nav-link active-link " : "nav-link"
                   }
                 >
-                  <i className="fa fa-plane" ></i>  Mis viajes
+                  <i className="fa fa-plane"></i> Mis viajes
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -81,7 +95,7 @@ function NavBar() {
                     isActive ? "nav-link active-link" : "nav-link"
                   }
                 >
-                  <i className="fa fa-plus" ></i>  Nuevo viaje
+                  <i className="fa fa-plus"></i> Nuevo viaje
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -94,6 +108,23 @@ function NavBar() {
                   <i className="fa-regular fa-lightbulb"></i> Inspirate
                 </NavLink>
               </li>
+
+              {/* Logout Button */}
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active-link" : "nav-link"
+                  }
+                >
+                  <i
+                    className="fa-solid fa-power-off"
+                    onClick={handleClick}
+                  ></i>{" "}
+                  Logout
+                </NavLink>
+              </li>
+
               <li className="nav-item">
                 <NavLink
                   to="/about"
@@ -104,10 +135,8 @@ function NavBar() {
                   <i className="fa-solid fa-circle-info"></i> Info
                 </NavLink>
               </li>
-  
-              {/* <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
-              </li> */}
+
+              
             </ul>
             {/* <form className="d-flex" role="search">
               <input
@@ -124,7 +153,6 @@ function NavBar() {
         </div>
       </nav>
     );
-
   }
 }
 

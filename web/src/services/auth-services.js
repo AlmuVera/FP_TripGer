@@ -33,6 +33,6 @@ export function getProfile() {
 }
 
 
-// export function logout() {
-//   return http.delete("/logout");
-// }
+export function logout() {
+  return http.delete("/logout");
+}
