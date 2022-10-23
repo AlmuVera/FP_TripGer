@@ -11,3 +11,14 @@ a, a:link, a:visited, a:active {
 a:hover{
   /* color: #585a5f; */
 }
+
+.back-btn{
+  color: #585a5f;
+  justify-content: center;
+  font-weight: 100;
+}
+
+.back-btn:hover{
+  color:#52beba
+
+}

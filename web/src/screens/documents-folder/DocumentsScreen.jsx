@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import * as tripService from "../../services/trip-services";
 import { DocumentList } from "../../components";
 
@@ -9,7 +9,7 @@ import "./Documents.Screen.css";
 function DocumentsScreen() {
   const { id } = useParams();
   const [updateAfterUpload, setUpdateAfterUpload] = useState(false);
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -98,13 +98,26 @@ function DocumentsScreen() {
                 </form>
               </div>
             </div>
-            <div>
+            {/* end form */}
+
+  
+            
+            <div className="display">
               <h3 className="fw-light m-2">Documentos:</h3>
               <DocumentList docId={id} updateAfterUpload={updateAfterUpload} />
-              
             </div>
+           
+
           </div>
         </div>
+        <button
+          className="border-0 bg-transparent mt-3 back-btn"
+          onClick={() => navigate(-1)}
+        >
+          <h4>
+            <i className="fa-solid fa-angle-left "></i> Back
+          </h4>
+        </button>
       </div>
     </>
   );

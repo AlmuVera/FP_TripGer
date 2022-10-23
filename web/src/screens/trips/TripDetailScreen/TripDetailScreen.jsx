@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router";
+
 import { DiaryBox, DocumentsBox, MapBox } from "../../../components";
 // import { Section } from "../../../components";
 import { getTrip } from "../../../services/trip-services";
 
-
 import "./TripDetailScreen.css";
 
 function TripDetailScreen() {
+  const navigate = useNavigate;
+
   const [trip, setTrip] = useState(null);
   const { id } = useParams();
-
+ 
   useEffect(() => {
     getTrip(id).then((trip) => setTrip(trip));
   }, [id]);
@@ -22,7 +24,6 @@ function TripDetailScreen() {
 
   return (
     <>
-      {/* {console.log(trip.data.city)} */}
 
       <div className="col-12">
         <img
@@ -44,7 +45,6 @@ function TripDetailScreen() {
       </div> */}
 
       <div className="d-flex flex-row boxes">
-
         <Link to={`/${id}/documentos`} type="button">
           <DocumentsBox />
         </Link>
@@ -56,8 +56,17 @@ function TripDetailScreen() {
         <Link to={`/${id}/diario-de-viaje`} type="button">
           <DiaryBox />
         </Link>
-       
       </div>
+      <button
+        className="border-0 bg-transparent mt-3 back-btn"
+        onClick={() => navigate(-1)}
+      >
+        <h4>
+          <i className="fa-solid fa-angle-left "></i> Back
+        </h4>
+      </button>
+
+      
     </>
   );
 }
