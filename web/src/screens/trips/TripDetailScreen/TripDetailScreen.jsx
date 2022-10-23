@@ -9,14 +9,14 @@ import { getTrip } from "../../../services/trip-services";
 import "./TripDetailScreen.css";
 
 function TripDetailScreen() {
-  const navigate = useNavigate;
-
   const [trip, setTrip] = useState(null);
   const { id } = useParams();
- 
+  const navigate = useNavigate();
+
   useEffect(() => {
     getTrip(id).then((trip) => setTrip(trip));
   }, [id]);
+
 
   if (!trip) {
     return <></>;
