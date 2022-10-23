@@ -24,6 +24,10 @@ export function authenticate(data) {
   return http.post("/authenticate", data);
 }
 
+export function registerUser(data) {
+  return http.post("/register", data);
+}
+
 export function getProfile() {
   return http.get("/profile");
 }

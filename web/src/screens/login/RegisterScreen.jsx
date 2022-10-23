@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { authenticate } from "../../services/auth-services";
+import { registerUser } from "../../services/auth-services";
 
 import "./LoginScreen.css";
 
@@ -19,11 +19,11 @@ function LoginScreen() {
     formState: { errors, isValid },
   } = useForm({ mode: "onTouched" });
 
-  const handleLogin = (data) => {
-    authenticate(data)
+  const handleRegister = (data) => {
+    registerUser(data)
       .then((data) => {
         value.setUser(data);
-        navigation("/");
+        navigation("/login");
       })
       .catch((error) => {
         if (error.response?.data?.errors) {
@@ -37,7 +37,7 @@ function LoginScreen() {
   };
   return (
     <>
-      {/* <form onSubmit={handleSubmit(handleLogin)}>
+      {/* <form onSubmit={handleSubmit(handleRegister)}>
         <div className="input-group mb-1">
           <span className="input-group-text">
             <i className="fa fa-user fa-fw"></i>
@@ -88,19 +88,40 @@ function LoginScreen() {
             <div className="tab-login my-5 ">
               <div className="tab-content tabs">
                 <div className="d-flex">
-                  <h3 className="fw-light m-2">Login</h3>
-                  <Link to="/register" type="button">
-                    <h3 className="fw-light m-2 text-muted">Register</h3>
+                  <Link to="/login" type="button">
+                    <h3 className="fw-light m-2 text-muted">Login</h3>
                   </Link>
+                  <h3 className="fw-light m-2">Register</h3>
                 </div>
                 <hr />
 
+  
+
                 <form
-                  onSubmit={handleSubmit(handleLogin)}
+                  onSubmit={handleSubmit(handleRegister)}
                   className="form-horizontal"
                 >
                   <div className=" form-group mb-1">
-                    <label htmlFor="city">email</label>
+                    <label htmlFor="name">username</label>
+                    <input
+                      type="name"
+                      className={`form-control ${
+                        errors.name ? "is-invalid" : ""
+                      }`}
+                      placeholder="Almu"
+                      {...register("name", {
+                        required: "Name is required",
+                      })}
+                    />
+                    {errors.name && (
+                      <div className="invalid-feedback">
+                        {errors.name.message}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className=" form-group mb-1">
+                    <label htmlFor="email">email</label>
                     <input
                       type="email"
                       className={`form-control ${
@@ -111,16 +132,16 @@ function LoginScreen() {
                         required: "Email is required",
                       })}
                     />
-                    {errors.city && (
+                    {errors.email && (
                       <div className="invalid-feedback">
-                        {errors.city.message}
+                        {errors.email.message}
                       </div>
                     )}
                   </div>
                   {/* // */}
 
                   <div className=" form-group mb-1">
-                    <label htmlFor="city">email</label>
+                    <label htmlFor="password">password</label>
                     <input
                       type="password"
                       className={`form-control ${
@@ -144,7 +165,7 @@ function LoginScreen() {
                       type="submit"
                       disabled={!isValid}
                     >
-                      Login
+                      Register
                     </button>
                   </div>
                 </form>

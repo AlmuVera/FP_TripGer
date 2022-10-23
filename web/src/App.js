@@ -7,6 +7,7 @@ import {
   CreateTripScreen,
   InspirationScreen,
   LoginScreen,
+  RegisterScreen,
   TripsScreen,
   InfoScreen,
   TripDetailScreen,
@@ -37,6 +38,7 @@ function App() {
       <div className="container my-4">
         <Routes>
           <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
           <Route path="/" element={<HomeScreen />} />
           <Route
             path="/crear-viaje"
