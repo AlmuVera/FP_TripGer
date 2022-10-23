@@ -21,6 +21,7 @@ module.exports.detail = (req, res, next) => {
   Trip.findById(req.params.id)
     .populate("owner", "name email")
     .populate("docs")
+    .populate("diaryPost")
     .then((trip) => {
       if (trip) {
         res.status(200).json(trip);

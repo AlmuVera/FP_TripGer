@@ -72,5 +72,11 @@ tripSchema.virtual("docs", {
   foreignField: "trip",
 });
 
+tripSchema.virtual("diaryPost", {
+  ref: "DiaryPost",
+  localField: "_id",
+  foreignField: "trip",
+});
+
 const Trip = mongoose.model("Trip", tripSchema);
 module.exports = Trip;
