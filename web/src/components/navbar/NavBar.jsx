@@ -118,7 +118,7 @@ function NavBar() {
                   }
                 >
                   <span onClick={handleClick}>
-                    <i className="fa-solid fa-power-off" f></i>
+                    <i className="fa-solid fa-power-off"></i>
                     Logout
                   </span>
                 </NavLink>
