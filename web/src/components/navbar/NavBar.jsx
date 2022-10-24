@@ -48,13 +48,13 @@ function NavBar() {
       <nav className="navbar navbar-bg sticky-top">
         <div className="container-fluid">
           <Link
-            className="navbar-brand position-absolute top-50 start-50 translate-middle"
+            className="navbar-brand"
             to="/"
           >
             <img className="logo-nav " src={logo} alt="TrpGer Logo" />
           </Link>
           <button
-            className="navbar-toggler custom-toggler position-absolute top-50 end-0 translate-middle"
+            className="navbar-toggler custom-toggler "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo03"
@@ -66,7 +66,7 @@ function NavBar() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-2">
               <li className="nav-item">
                 <NavLink
                   to="/"
@@ -110,19 +110,7 @@ function NavBar() {
               </li>
 
               {/* Logout Button */}
-              <li className="nav-item">
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active-link" : "nav-link"
-                  }
-                >
-                  <span onClick={handleClick}>
-                    <i className="fa-solid fa-power-off"></i>
-                    Logout
-                  </span>
-                </NavLink>
-              </li>
+              
 
               <li className="nav-item">
                 <NavLink
@@ -132,6 +120,18 @@ function NavBar() {
                   }
                 >
                   <i className="fa-solid fa-circle-info"></i> Info
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active-link" : "nav-link"
+                  }
+                >
+                  <span onClick={handleClick}>
+                    <i className="fa-solid fa-power-off"></i> Logout
+                  </span>
                 </NavLink>
               </li>
             </ul>
@@ -149,6 +149,11 @@ function NavBar() {
           </div>
         </div>
       </nav>
+
+
+
+
+
     );
   }
 }
