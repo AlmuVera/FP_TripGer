@@ -13,7 +13,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
 import * as tripService from "../../services/trip-services";
 import { DiaryPostsList } from "../../components";
-import moment from "moment";
 
 import "./DiaryScreen.css";
 
@@ -30,7 +29,7 @@ function DiaryScreen() {
 
   const handleUploadPost = (data) => {
     setRefreshAfterUpload(false);
-    console.log(data)
+    // console.log(data)
     console.log(data.file[0], "diaryScreen");
     tripService
       .uploadPost(id, data.title, data.text, data.date, data.file[0])

@@ -39,10 +39,17 @@ export function deleteFile(file, id) {
   return http.delete(`/trips/${id}/documents/${file}`)
 }
 
+export function deletePost(file, id) {
+  return http.delete(`/trips/${id}/diaryPost/${file}`)
+}
 // export function getFile(id, title) {
 //   return http.get(`/trips/${id}/documents`)
 // };
 
 export function getDocuments(id) {
+  return http.get(`/trips/${id}`);
+}
+
+export function getDiaryPosts(id) {
   return http.get(`/trips/${id}`);
 }

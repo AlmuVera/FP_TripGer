@@ -41,7 +41,7 @@ function DocumentItem(props) {
           }}
         >
           {/* delete btn: */}
-          <i className="fa-solid fa-trash list-trash-icon"></i>
+          <i className="fa-solid fa-trash-can list-trash-icon"></i>
         </button>
       </div>
       <div>
