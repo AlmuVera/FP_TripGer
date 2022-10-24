@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import * as tripService from "../../services/trip-services";
 import { DocumentList } from "../../components";
 
-import "./Documents.Screen.css";
+import "./DocumentsScreen.css";
 
 function DocumentsScreen() {
   const { id } = useParams();
