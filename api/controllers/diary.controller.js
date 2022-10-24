@@ -9,15 +9,16 @@ module.exports.list = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
-  console.log(req.path)
+  console.log(req.file, "hola path")
   DiaryPost.create({
     title: req.body.title,
     text: req.body.text,
     image: req.file.path,
-    // date: req.body,date,
+    date: req.body.date,
     trip: req.params.id,
     user: req.user.id,
   })
+  
     .then((diaryPost) => {res.status(201).json(diaryPost)})
     .catch(next);
 };
@@ -35,7 +36,6 @@ module.exports.detail = (req, res, next) => {
 };
 
 module.exports.update = (req, res, next) => {
-  console.log("lalalalalalalalala")
   console.log(req.params)
   req.diaryPost.title = req.body.title;
 

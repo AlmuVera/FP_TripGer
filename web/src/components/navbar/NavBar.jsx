@@ -117,11 +117,10 @@ function NavBar() {
                     isActive ? "nav-link active-link" : "nav-link"
                   }
                 >
-                  <i
-                    className="fa-solid fa-power-off"
-                    onClick={handleClick}
-                  ></i>{" "}
-                  Logout
+                  <span onClick={handleClick}>
+                    <i className="fa-solid fa-power-off" f></i>
+                    Logout
+                  </span>
                 </NavLink>
               </li>
 
@@ -135,8 +134,6 @@ function NavBar() {
                   <i className="fa-solid fa-circle-info"></i> Info
                 </NavLink>
               </li>
-
-              
             </ul>
             {/* <form className="d-flex" role="search">
               <input

@@ -57,6 +57,7 @@ function App() {
           <Route path="/mis-viajes" element={<TripsScreen />} />
           <Route path="/:id" element={<TripDetailScreen />}/>
           <Route path="/:id/documentos" element={<DocumentsScreen/>}/>
+          <Route path="/:id/diario-de viaje" element={<DiaryScreen/>}/>
 
 
 
