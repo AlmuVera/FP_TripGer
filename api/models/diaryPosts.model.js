@@ -28,11 +28,12 @@ const diaryPostSchema = new Schema(
         message: "URL is not valid",
     },
 
-    date: {
-      type: Date,
-      // required: true,
+   
+  },
+  date: {
+    type: Date,
+    // required: true,
 
-    }
   },
 
     user: {
