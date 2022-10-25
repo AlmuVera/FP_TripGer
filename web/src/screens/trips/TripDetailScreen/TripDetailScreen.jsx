@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
-
-import { DiaryBox, DocumentsBox, MapBox } from "../../../components";
-// import { Section } from "../../../components";
+import moment from "moment";
+import {
+  DiaryBox,
+  DocumentsBox,
+  MapBox,
+  Events,
+  Section,
+} from "../../../components";
 import { getTrip } from "../../../services/trip-services";
+import { getEventsFromCity } from "../../../services/event-services";
 
 import "./TripDetailScreen.css";
 
 function TripDetailScreen() {
   const [trip, setTrip] = useState(null);
+  const [events, setEvents] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    getTrip(id).then((trip) => setTrip(trip));
+    getTrip(id)
+      .then((trip) => {
+        setTrip(trip);
+        return trip;
+      })
+      .then((tripdata) => {
+        const result = getEventsFromCity(tripdata.data.city);
+        return result;
+      })
+      .then((events) => setEvents(events.data.events));
   }, [id]);
-
 
   if (!trip) {
     return <></>;
@@ -24,32 +39,40 @@ function TripDetailScreen() {
 
   return (
     <>
-
       <div className="col-12">
-        <img
-          src={trip.data.coverPhoto}
-          alt="coverPhoto"
-          className="w-100 rounded"
-        />
-        <h2 className="my-3">{trip.data.city}</h2>
+        <div className="">
+        <div className="d-flex justify-content-between">
+          <h1 className="card-title d-flex text-capitalize">
+          {trip.data.city}
+          </h1>
+          <h6 className="card-title d-flex from-now">
+            {moment(trip.data.startDate).fromNow()}
+          </h6>
+          </div>
+          
+          <h6 className="card-title d-flex h1-card d-flex align-items-end mb-3">
+            {moment(trip.data.startDate).format("D MMM YYYY")}
+            <i className="date-arrow fa-solid fa-arrow-right-long " />
+            {moment(trip.data.endDate).format("D MMM YYYY")}
+          </h6>
+          <img
+            src={trip.data.coverPhoto}
+            alt="coverPhoto"
+            className="w-100 rounded mb-3 "
+          />
+        </div>
+       
       </div>
-      <div className="">
-        <p>{trip.data.description}</p>
-        <p className="m-0">{trip.data.startDate}</p>
-        <p>{trip.data.endDate}</p>
-      </div>
-
-      {/* <div className="d-flex flex-row boxes">
-        <DocumentsBox />
-        <MapBox />
-      </div> */}
-
-      <div className="d-flex flex-row boxes">
+      
+      {/* <----> */}
+     
+      <div class="square square-lg bg-white"></div>
+      <div className="d-flex flex-wrap">
         <Link to={`/${id}/documentos`} type="button">
           <DocumentsBox />
         </Link>
 
-        <Link to={`/${id}/mapa`} type="button">
+        <Link to={`/${id}/mapa/${trip.data.city.split(',')[0]}`} type="button">
           <MapBox />
         </Link>
 
@@ -57,6 +80,19 @@ function TripDetailScreen() {
           <DiaryBox />
         </Link>
       </div>
+      <Section title={`Eventos en ${trip.data.city}`} icon="ticket"></Section>
+      <div className="container">
+        <div className="row row-cols-3">
+          {events &&
+            events.map((event, element) => (
+              <div className="col-sm" key={event.id}>
+                <Events element={element} {...event} />
+              </div>
+            ))}
+        </div>
+      </div>
+      
+
       <button
         className="border-0 bg-transparent mt-3 back-btn"
         onClick={() => navigate(-1)}
@@ -65,8 +101,6 @@ function TripDetailScreen() {
           <i className="fa-solid fa-angle-left "></i> Back
         </h4>
       </button>
-
-      
     </>
   );
 }

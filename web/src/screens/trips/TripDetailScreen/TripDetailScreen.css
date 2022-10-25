@@ -1,4 +1,16 @@
-.boxes{
-  /* justify-content: space-around; */
+.boxes {
+  /* justify-content: space-between; */
+}
+
+.date-arrow {
+  margin: 2px 6px;
+}
+
+.card-img-detail {
+  max-height: 250px ;
+  /* object-fit: cover; */
   
+}
+.from-now{
+  margin-top: 15px;
 }

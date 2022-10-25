@@ -7,6 +7,7 @@ const diaryPosts = require('../controllers/diary.controller')
 const auth = require("../controllers/auth.controller");
 const secure = require("../middlewares/secure.mid");
 const tripsMid = require("../middlewares/trips.mid");
+const ticketmaster = require("../controllers/ticketmaster.controller")
 
 router.post("/register", auth.register);
 router.get("/profile", secure.isAuthenticated, auth.profile);
@@ -24,13 +25,12 @@ router.get('/trips/:id/documents/:documentId', secure.isAuthenticated, docs.deta
 router.patch('/trips/:id/documents/:documentId', secure.isAuthenticated,tripsMid.documentOwnedByUser, docs.update);
 router.delete('/trips/:id/documents/:documentId', secure.isAuthenticated,tripsMid.documentOwnedByUser, docs.delete);
 
-
-//rutas de diario de viaje aun no funciona
 router.post('/trips/:id/diaryPost', secure.isAuthenticated, upload.single('image'), diaryPosts.create);
 router.get('/trips/:id/diaryPost/:diaryPostId', secure.isAuthenticated, diaryPosts.detail);
 router.patch('/trips/:id/diaryPost/:diaryPostId', secure.isAuthenticated,tripsMid.postOwnedByUser, diaryPosts.update);
 router.delete('/trips/:id/diaryPost/:diaryPostId', secure.isAuthenticated,tripsMid.postOwnedByUser, diaryPosts.delete);
 
-
+//Ticketmaster API
+router.get('/events/:city', ticketmaster.getData)
 
 module.exports = router;
