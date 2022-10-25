@@ -1,13 +1,3 @@
-// import React from 'react'
-
-// function DiaryScreen() {
-//   return (
-//     <div>DiaryScreen</div>
-//   )
-// }
-
-// export default DiaryScreen
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
@@ -30,7 +20,7 @@ function DiaryScreen() {
   const handleUploadPost = (data) => {
     setRefreshAfterUpload(false);
     // console.log(data)
-    console.log(data.file[0], "diaryScreen");
+    // console.log(data.file[0], "diaryScreen");
     tripService
       .uploadPost(id, data.title, data.text, data.date, data.file[0])
       .then(() => setRefreshAfterUpload(true))
@@ -86,7 +76,6 @@ function DiaryScreen() {
                         errors.text ? "is-invalid" : ""
                       }`}
                       {...register("text", {})}
-                      
                     />
                     {errors.text && (
                       <div className="invalid-feedback">
@@ -100,6 +89,7 @@ function DiaryScreen() {
                     <label htmlFor="date">Selecciona una fecha</label>
                     <input
                       type="date"
+                      min={new Date().toISOString().split("T")[0]}
                       className={`form-control fw ${
                         errors.date ? "is-invalid" : ""
                       }`}
@@ -150,8 +140,8 @@ function DiaryScreen() {
             </div>
             {/* end form */}
 
-            <div className="display">
-              <h3 className="fw-light m-2">Recuerdos:</h3>
+            <div className="">
+              {/* <h3 className="fw-light m-2">Recuerdos:</h3> */}
               <DiaryPostsList
                 diaryPostId={id}
                 refreshAfterUpload={refreshAfterUpload}

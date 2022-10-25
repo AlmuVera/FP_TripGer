@@ -1,20 +1,11 @@
-// import React from 'react'
-
-// function DiaryPostsList() {
-//   return (
-//     <div>DiaryPostsList</div>
-//   )
-// }
-
-// export default DiaryPostsList
-
 import React, { useState, useEffect } from "react";
 import * as tripService from "../../../services/trip-services";
+import Section from "../../section/Section";
 import DiaryPostItem from "../diary-post-item/DiaryPostItem";
 
 function DiaryPostsList(props) {
   const [diaryPost, setDiaryPosts] = useState([]);
-  const [makePostUpdate, setMakePostUpdate] = useState(false)
+  const [makePostUpdate, setMakePostUpdate] = useState(false);
 
   useEffect(() => {
     tripService
@@ -27,20 +18,19 @@ function DiaryPostsList(props) {
   }, [props.diaryPostId, makePostUpdate, props.refreshAfterUpload]);
 
   return (
-    <div className="container">
-      <div className="">
-        {diaryPost
+    <div className="">
+      {diaryPost
         ? diaryPost.map((diaryPost) => (
+            <div key={diaryPost.id} className="col-12">
+              <Section title="Recuerdos" icon="images"></Section>
 
-          <div key={diaryPost.id} className="col-12">
-
-            <DiaryPostItem postData={diaryPost} setMakePostUpdate={setMakePostUpdate} />
-          </div>
-
-        ))
-      : "Loading..."}
-
-      </div>
+              <DiaryPostItem
+                postData={diaryPost}
+                setMakePostUpdate={setMakePostUpdate}
+              />
+            </div>
+          ))
+        : "Loading..."}
     </div>
   );
 }
