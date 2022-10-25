@@ -4,9 +4,10 @@ h1.h1-card {
   font-size: 300%;
   text-shadow: 1px 1px 10px #404241
 }
-p.p-card{
+h6.h1-card {
   text-shadow: 1px 1px 10px #404241
 }
+
 
 .card{
   display: flex;
