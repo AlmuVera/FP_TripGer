@@ -26,7 +26,6 @@ export function uploadFile(id, title, file) {
 }
 
 export function uploadPost(id, title, text, date, file) {
-  // console.log("woeiiii", title, text, file, date)
   const data = new FormData()
   data.append('title', title)
   data.append('text', text)
@@ -42,9 +41,6 @@ export function deleteFile(file, id) {
 export function deletePost(file, id) {
   return http.delete(`/trips/${id}/diaryPost/${file}`)
 }
-// export function getFile(id, title) {
-//   return http.get(`/trips/${id}/documents`)
-// };
 
 export function getDocuments(id) {
   return http.get(`/trips/${id}`);

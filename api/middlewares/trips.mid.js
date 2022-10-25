@@ -20,6 +20,8 @@ module.exports.isOwnedByUser = (req, res, next) => {
     .catch(next);
 };
 
+
+
 module.exports.documentOwnedByUser = (req, res, next) => {
   const { documentId, fileId } = req.params;
 

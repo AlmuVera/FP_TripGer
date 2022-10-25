@@ -2,10 +2,13 @@ const Trip = require("../models/trip.model");
 const createError = require("http-errors"); //para utilizar createError
 
 module.exports.list = (req, res, next) => {
-  Trip.find()
+  Trip.find({owner: req.session.userId})
     .populate("owner", "name email")
-    .then((trips) => res.status(200).json(trips))
+    .then((trips) => {
+      res.status(200).json(trips)
+    })
     .catch((error) => next(error));
+  
 };
 
 module.exports.create = (req, res, next) => {
