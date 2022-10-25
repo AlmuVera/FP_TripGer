@@ -60,7 +60,7 @@ function MapaScreen(props) {
               }}
               onLoad={(map) => setMap(map)}
             >
-              <MarkerF position={geoLoc} animation={{ animation:2 }} />
+              <MarkerF position={geoLoc} animation={2} />
             </GoogleMap>
           )}
       </div>
