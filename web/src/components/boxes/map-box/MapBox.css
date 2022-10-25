@@ -1,17 +1,18 @@
 
-.box {
-  height: 150px;
-  width: 150px;
-  border-radius: 20px;
-  background-color: #2e3137;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-}
+      /* .box {
+        height: 150px;
+        width: 150px;
+        border-radius: 20px;
+        background-color: #2e3137;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        
+      } */
 
 .map-folder{
-  font-size: 40px;
+  font-size: 35px;
   margin: auto
 }
 
-.text-box{
+/* .text-box{
   margin: auto;
-}
+} */
