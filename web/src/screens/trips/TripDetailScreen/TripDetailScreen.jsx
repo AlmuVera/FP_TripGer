@@ -27,7 +27,7 @@ function TripDetailScreen() {
         return trip;
       })
       .then((tripdata) => {
-        const result = getEventsFromCity(tripdata.data.city);
+        const result = getEventsFromCity(tripdata.data.city, tripdata.data.startDate);
         return result;
       })
       .then((events) => setEvents(events.data.events));
@@ -66,7 +66,7 @@ function TripDetailScreen() {
       
       {/* <----> */}
      
-      <div class="square square-lg bg-white"></div>
+      {/* <div className="square square-lg bg-white"></div> */}
       <div className="d-flex flex-wrap">
         <Link to={`/${id}/documentos`} type="button">
           <DocumentsBox />

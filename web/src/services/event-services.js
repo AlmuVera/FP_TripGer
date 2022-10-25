@@ -5,6 +5,6 @@ const http = axios.create({
   withCredentials: true,
 });
 
-export function getEventsFromCity(city) {
-  return http.get(`/events/${city}`);
+export function getEventsFromCity(city, startDateTime) {
+  return http.get(`/events/${city}?startDateTime=${startDateTime.split('.')[0]}Z`);
 }
