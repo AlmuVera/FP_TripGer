@@ -62,7 +62,7 @@ function App() {
 
 
           
-          <Route path="/:id/mapa" element={<MapaScreen/>}/>
+          <Route path="/:id/mapa/:city" element={<MapaScreen/>}/>
           <Route path="/:id/diario-de-viaje" element={<DiaryScreen/>}/>
           <Route path="/inspiracion" element={<InspirationScreen />} />
           <Route path="/info" element={<InfoScreen />} />

@@ -12,4 +12,5 @@ export { default as MapBox } from "./boxes/map-box/MapBox";
 
 export { default as DiaryBox } from "./boxes/travel-diary/DiaryBox";
 export { default as DiaryPostsList } from "./diary-posts/diary-posts-list/DiaryPostsList";
-// export { default as DiaryPostItem } from ".//diary-posts/diary-posts-list/DiaryPostItem";
+export { default as Events } from "./events/Events";
+
