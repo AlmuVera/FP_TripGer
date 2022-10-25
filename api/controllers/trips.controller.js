@@ -8,7 +8,6 @@ module.exports.list = (req, res, next) => {
       res.status(200).json(trips)
     })
     .catch((error) => next(error));
-  
 };
 
 module.exports.create = (req, res, next) => {
