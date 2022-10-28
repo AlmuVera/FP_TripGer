@@ -7,7 +7,7 @@ import { DiaryPostsList } from "../../components";
 import "./DiaryScreen.css";
 
 function DiaryScreen() {
-  const { id } = useParams();
+  const { id, startDate, endDate } = useParams();
   const [refreshAfterUpload, setRefreshAfterUpload] = useState(false);
   const navigate = useNavigate();
   const {
@@ -89,7 +89,8 @@ function DiaryScreen() {
                     <label htmlFor="date">Selecciona una fecha</label>
                     <input
                       type="date"
-                      min={new Date().toISOString().split("T")[0]}
+                      min={startDate}
+                      max={endDate}
                       className={`form-control fw ${
                         errors.date ? "is-invalid" : ""
                       }`}
