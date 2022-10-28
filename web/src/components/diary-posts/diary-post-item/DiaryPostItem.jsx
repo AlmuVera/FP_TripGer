@@ -1,6 +1,6 @@
 import React from "react";
 import * as tripService from "../../../services/trip-services";
-
+import moment from "moment"
 import "./DiaryPostItem.css";
 
 function DiaryPostItem(props) {
@@ -39,7 +39,7 @@ function DiaryPostItem(props) {
               <h4 className="card-title text-capitalize text-dark">
                 {props.postData.title}
               </h4>
-              <p className="text-muted">Aqui va la fecha</p>
+              <p className="text-muted">{moment(props.postData.date).format("D MMM YYYY")}</p>
 
               <p className="card-text text-dark">{props.postData.text}</p>
               {/* <a href="#" class="btn btn-outline-primary">Primary</a> */}
