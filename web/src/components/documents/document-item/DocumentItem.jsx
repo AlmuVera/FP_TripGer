@@ -1,7 +1,6 @@
 import React from "react";
 import * as tripService from "../../../services/trip-services";
 
-
 import "./DocumentItem.css";
 
 function DocumentItem(props) {
@@ -19,7 +18,6 @@ function DocumentItem(props) {
           console.log(errors);
           Object.keys(error.response.data.errors).forEach((error) => {
             return error, { message: errors[error].message };
-
           });
         }
       });
@@ -44,9 +42,7 @@ function DocumentItem(props) {
           <i className="fa-solid fa-trash-can list-trash-icon"></i>
         </button>
       </div>
-      <div>
-        
-      </div>
+      
     </>
   );
 }

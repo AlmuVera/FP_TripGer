@@ -103,7 +103,7 @@ function DocumentsScreen() {
   
             
             <div className="display">
-              <h3 className="fw-light m-2">Documentos:</h3>
+              {/* <h3 className="fw-light m-2">Documentos:</h3> */}
               <DocumentList docId={id} updateAfterUpload={updateAfterUpload} />
             </div>
            
