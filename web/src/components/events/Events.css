@@ -1,3 +1,11 @@
 .event-info{
   margin-left: 20px;
 }
+
+.fill {
+  object-fit: cover;
+}
+
+.link-event:hover{
+  color: brown;
+}
