@@ -27,7 +27,10 @@ function TripDetailScreen() {
         return trip;
       })
       .then((tripdata) => {
-        const result = getEventsFromCity(tripdata.data.city, tripdata.data.startDate);
+        const result = getEventsFromCity(
+          tripdata.data.city,
+          tripdata.data.startDate
+        );
         return result;
       })
       .then((events) => setEvents(events.data.events));
@@ -41,16 +44,16 @@ function TripDetailScreen() {
     <>
       <div className="col-12">
         <div className="">
-        <div className="d-flex justify-content-between">
-          <h1 className="card-title d-flex text-capitalize">
-          {trip.data.city}
-          </h1>
-          <h6 className="card-title d-flex from-now">
-            {moment(trip.data.startDate).fromNow()}
-          </h6>
+          <div className="d-flex justify-content-between mx-3 ">
+            <h1 className="card-title d-flex text-capitalize">
+              {trip.data.city}
+            </h1>
+            <h6 className="card-title d-flex from-now ">
+              {moment(trip.data.startDate).fromNow()}
+            </h6>
           </div>
-          
-          <h6 className="card-title d-flex h1-card d-flex align-items-end mb-3">
+
+          <h6 className="card-title d-flex h1-card d-flex align-items-end mb-3 mx-3">
             {moment(trip.data.startDate).format("D MMM YYYY")}
             <i className="date-arrow fa-solid fa-arrow-right-long " />
             {moment(trip.data.endDate).format("D MMM YYYY")}
@@ -60,29 +63,29 @@ function TripDetailScreen() {
             alt="coverPhoto"
             className="w-100 rounded mb-3 "
           />
+          <p className="text-muted mx-3">{trip.data.description}</p>
         </div>
-       
       </div>
-      
+
       {/* <----> */}
-     
+
       {/* <div className="square square-lg bg-white"></div> */}
-      <div className="d-flex flex-wrap">
+      <div className="d-flex justify-content-around flex-wrap">
         <Link to={`/${id}/documentos`} type="button">
           <DocumentsBox />
         </Link>
 
-        <Link to={`/${id}/mapa/${trip.data.city.split(',')[0]}`} type="button">
+        <Link to={`/${id}/mapa/${trip.data.city.split(",")[0]}`} type="button">
           <MapBox />
         </Link>
 
-        <Link to={`/${id}/diario-de-viaje`} type="button">
+        <Link to={`/${id}/diario-de-viaje/${trip.data.startDate.split('T')[0]}/${trip.data.endDate.split('T')[0]}`} type="button">
           <DiaryBox />
         </Link>
       </div>
       <Section title={`Eventos en ${trip.data.city}`} icon="ticket"></Section>
       <div className="container">
-        <div className="row row-cols-3">
+        <div className="">
           {events &&
             events.map((event, element) => (
               <div className="col-sm" key={event.id}>
@@ -91,7 +94,6 @@ function TripDetailScreen() {
             ))}
         </div>
       </div>
-      
 
       <button
         className="border-0 bg-transparent mt-3 back-btn"

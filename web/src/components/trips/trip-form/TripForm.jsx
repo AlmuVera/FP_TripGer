@@ -119,7 +119,7 @@ function TripForm() {
                   </div>
 
                   <div className="form-group mb-1">
-                    <label htmlFor="city">Añade una descripción.Opcional</label>
+                    <label htmlFor="city">Añade una descripción (opcional)</label>
                     <textarea
                       className="form-control"
                       {...register("description", {
